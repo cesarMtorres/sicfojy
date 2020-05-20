@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7efa0a3f-3265-4dfc-9db4-e42b8f531737">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     persona."id_persona" AS persona_id_persona,
+     persona."nombreper" AS persona_nombreper,
+     persona."apellidoper" AS persona_apellidoper,
+     persona."cedulaper" AS persona_cedulaper,
+     persona."telefonoper" AS persona_telefonoper,
+     persona."generoper" AS persona_generoper,
+     persona."direccionper" AS persona_direccionper,
+     persona."fnacimientoper" AS persona_fnacimientoper,
+     persona."tipoper" AS persona_tipoper,
+     persona."nacionper" AS persona_nacionper,
+     persona."id_profesor" AS persona_id_profesor,
+     profesor."id_profesor" AS profesor_id_profesor,
+     profesor."id_personapro" AS profesor_id_personapro,
+     profesor."eliminacion" AS profesor_eliminacion
+FROM
+     "public"."persona" persona INNER JOIN "public"."profesor" profesor ON persona."id_persona" = profesor."id_personapro"
+     AND profesor."id_profesor" = persona."id_profesor"]]>
+	</queryString>
+	<field name="persona_nombreper" class="java.lang.String"/>
+	<field name="persona_apellidoper" class="java.lang.String"/>
+	<field name="persona_cedulaper" class="java.lang.String"/>
+	<field name="persona_telefonoper" class="java.lang.String"/>
+	<field name="persona_generoper" class="java.lang.String"/>
+	<field name="persona_direccionper" class="java.lang.String"/>
+	<field name="persona_fnacimientoper" class="java.sql.Date"/>
+	<field name="profesor_id_personapro" class="java.lang.Integer"/>
+	<group name="persona_nombreper">
+		<groupExpression><![CDATA[$F{persona_nombreper}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="e994984a-3669-47fa-b56f-f29ff3610ac4"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[persona_nombreper]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="50c3e2e1-c8ff-4264-beb3-2698b3113745"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{persona_nombreper}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="1a5d5baa-78d0-450f-bb5c-2c45a2e6e924"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="9805e87f-db0d-4cdf-bc89-ff003d3cdcdb"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="30b61c7d-e21a-46b4-924f-b2f503025bff"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="d8a6a8f7-ff30-4f3d-8526-b96588a5988f"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="e1339b64-e290-452c-a0c4-39f18402e63e"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4707fb6c-f281-4808-9290-60f995421392"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_apellidoper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="79" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b949b9f6-046b-439e-aaa9-5dd441447db9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_cedulaper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="158" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="167dab04-14f6-4127-8383-ded4a44c97fb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_telefonoper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="237" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8f97c837-af36-45f9-9f69-449ec539cce9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_generoper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7dccfa94-2353-4a61-a6bb-97754a321117"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_direccionper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="395" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c6fb84a6-7976-4e5e-a5a9-c997c5aee805"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[persona_fnacimientoper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="474" y="0" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="35ab213c-58ff-42bd-b7f8-826e7b90c7ec"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[profesor_id_personapro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="837bf294-da58-441a-9f60-a4014e84e8f3"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="79" height="20" uuid="2fe0b915-94ff-4299-b10c-2085a6feac5f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_apellidoper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="79" y="0" width="79" height="20" uuid="c45465f6-8dd6-4ec6-8ebf-ef011e8a8dee"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_cedulaper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="158" y="0" width="79" height="20" uuid="d6950ffe-3e42-4d33-bf44-09163b5cb88f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_telefonoper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="237" y="0" width="79" height="20" uuid="379b58da-ac1a-42dd-b502-aa34e11a0df4"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_generoper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="316" y="0" width="79" height="20" uuid="098baabe-8046-4eef-bd2d-a8dfd8681ea1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_direccionper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="395" y="0" width="79" height="20" uuid="89a4fd24-98e4-4056-b95b-779bb20837bd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persona_fnacimientoper}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="474" y="0" width="79" height="20" uuid="e5091618-be6f-4dca-86c6-43e18e014469"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{profesor_id_personapro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a6b4ec35-df11-4e69-b4d9-3c191fc026b5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="75a9d2c3-01cb-4d28-b331-4489312a0610"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="da16e4e6-3735-4312-a738-dd9b84d7b4bc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
